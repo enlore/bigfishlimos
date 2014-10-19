@@ -1,0 +1,106 @@
+$neonGreen = #7BE964
+$neonPurp = #C42BE5
+$gold = #F4DC7A
+$shinyBlack = #07080C
+
+@import 'grid'
+@import 'util'
+@import 'gradients.styl'
+@import 'fonts'
+
+*
+    box-sizing border-box
+
+body 
+    background-color $shinyBlack
+    font-family sans-serif
+ 
+    margin 0
+    height 100%
+    font-size 24px
+
+.btn
+    border-radius 5px
+    padding 0.75em
+
+.btn-lg
+    font-size 2em
+ 
+.btn-cta
+    background-color $neonGreen
+    color $neonPurp
+    box-shadow 2px 2px 0px 2px $neonPurp
+    border none
+
+header
+    $headPad = 2em
+    padding-top $headPad - 1
+    padding-bottom $headPad
+
+.lead 
+    directional($neonPurp, darken($neonPurp, 70%), 25deg)
+    min-height 1px
+    img
+        margin 0 auto
+        width 60%
+
+@media screen and (min-width 768px) 
+    .lead 
+        z-index 6
+ 
+section.boxes-section
+    position relative
+    z-index 1
+    $sectionPad = 6em
+    padding-bottom $sectionPad
+    padding-top $sectionPad
+    background-image url('/img/bg.jpg')
+    background-position 0px -400px
+
+.boxes .col-sm-1-3
+    background #ddd
+    padding 0.3em 0.2em 0.3em 0.2em
+
+    @media screen and (min-width: 768px)
+        min-height 406px
+
+    @media screen and (min-width: 900px)
+        min-height 377px
+
+    transition all 0.2s ease
+    box-shadow 0px 0px 2px 4px transparent
+    z-index 4
+    h1 
+        font-size 28px
+        @media screen and (min-width: 768px)
+            font-size 36px
+        
+    p
+        font-size 1.4em
+
+    &:hover
+        transform translate3d(0px, -3px, 0px)
+        box-shadow 0px 0px 10px 2px $neonPurp
+        z-index 5
+        
+    &:nth-child(1)
+        background #fff
+    &:nth-child(2)
+        background #ccc
+    &:nth-child(3)
+        background #bbb
+
+section.call-cta-container
+    padding-top 2em
+    padding-bottom 2em
+    color $gold
+    p
+        font-size 58px
+        margin 0
+        margin-top 15px
+
+footer
+    $footPad = 0em
+    padding-top $footPad
+    padding-bottom $footPad
+    background-color $neonPurp
