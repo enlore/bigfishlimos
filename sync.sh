@@ -1,1 +1,1 @@
-rsync -rvz public/ chili:/var/www/bigfishlimos.com/public
+rsync -prvz public/ chili:/var/www/bigfishlimos.com/public
