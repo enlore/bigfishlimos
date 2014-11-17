@@ -1,6 +1,7 @@
 $neonGreen = #7BE964
 $neonPurp = #C42BE5
 $gold = #F4DC7A
+$gold-alpha = rgba(244, 220, 122, 0.7)
 $shinyBlack = #07080C
 
 $tablet = 768px
@@ -23,6 +24,12 @@ body
     height 100%
     font-size 24px
 
+.btn-lg
+    font-size 24px
+
+    @media screen and (min-width: $tablet)
+        font-size 44px
+
 .btn
     border-radius 5px
     padding 0.75em
@@ -39,15 +46,18 @@ header
     padding-top $headPad
     padding-bottom $headPad
     background-image url('/img/bg.jpg')
-    background-position 0px -400px
+    background-position center
+    background-size cover
     min-height 1px
     overflow hidden
+
     .logo
-        margin 0 auto
-        @media screen and (min-width: $tablet)
-            margin 0
-            float right
-            margin-right 3em
+        padding 1em
+        padding-top 0.8em
+        background-color $gold
+        background-color $gold-alpha
+        box-shadow 0px 0px 4px 6px $gold-alpha
+        margin-bottom 1em
  
 .boxes-section
     border-top 1px solid $neonGreen
@@ -57,6 +67,7 @@ header
     $sectionPad = 4em
     padding-bottom $sectionPad
     padding-top $sectionPad
+    background-image url("/img/bg_pinstripe.png")
     vertical(darken($neonPurp, 70%), $neonPurp)
 
 .boxes .col-sm-1-3
@@ -108,15 +119,6 @@ header
         $radStart  = darken($shinyBlack, 80%)
         vertical($radStart, $radEnd)
 
-        /*
-    &:nth-child(1)
-        background-image url('/img/lock.png')
-        background-size contain
-        background-repeat no-repeat
-        background-position center center
-        */
-        
-
 .call-cta-container
     $padding = 3em
     padding-top $padding
@@ -129,11 +131,6 @@ header
     $radEnd   = darken($shinyBlack, 80%)
     radial($radStart, $radEnd)
 
-    .btn-lg
-        font-size 24px
-
-        @media screen and (min-width: $tablet)
-            font-size 52px
 
     p
         font-size 38px
